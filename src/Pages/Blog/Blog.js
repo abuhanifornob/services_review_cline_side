@@ -29,10 +29,14 @@ const Blog = () => {
       </div>
       <div tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
         <div className="collapse-title text-xl font-medium">
-          Focus me to see content
+        What is JWT, and how does it work?
         </div>
         <div className="collapse-content">
-          <p>tabIndex={0} attribute is necessary to make the div focusable</p>
+          <p> <span className='font-bolder text-2xl ml-2'>What is JWT (JSON Web Token)?</span> <br />
+         JSON Web Token (JWT) is an open standard (RFC 7519) for securely transmitting information between parties as JSON object. It is compact, readable and digitally signed using a private key/ or a public key pair by the Identity Provider(IdP)
+        </p> <br />
+        <p> <span className='font-bolder text-2xl ml-2'>What is JWT (JSON Web Token)?</span> <br />
+        In short, JWTs are used as a secure way to authenticate users and share information. Typically, a private key, or secret, is used by the issuer to sign the JWT. The receiver of the JWT will verify the signature to ensure that the token hasn't been altered after it was signed by the issuer. </p>
         </div>
       </div>
       <div tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
