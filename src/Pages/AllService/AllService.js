@@ -1,24 +1,24 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import AllCategoryCart from './AllCategoryCart';
 
-const AllService = ({ service }) => {
-    const { title, img, price, description } = service;
+
+const AllService = () => {
+    const allService=useLoaderData();
+
     return (
-        <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
-                <figure><img src={img} alt="Shoes" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">
-                        {title}
-                        <div className="badge badge-secondary">NEW</div>
-                    </h2>
-                    <p>{description}</p>
-                    <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Fashion</div>
-                        <div className="badge badge-outline">Products</div>
-                    </div>
-                </div>
+        <div className='my-8'>
+            <h1 className='text-3xl '>My All Training Service {allService.length} </h1>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            {
+                allService.map(serviceCategory=><AllCategoryCart
+                key={serviceCategory._id}
+                serviceCategory={serviceCategory}
+                ></AllCategoryCart>)
+            }
             </div>
-
+            
+          
         </div>
     );
 };
