@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-const ReviewCart = ({rev}) => {
-    const {traningName,customer,email,phone,date,rating,message,trainerReviewId}=rev;
+const ReviewCart = ({rev,handleReviewDelete}) => {
+    const {traningName,customer,email,phone,date,rating,message,trainerReviewId,_id}=rev;
     const[userReviw,setUserReviw]=useState([]);
     useEffect(() => {
         fetch(`http://localhost:5000/service/${trainerReviewId}`)
@@ -32,7 +32,7 @@ const ReviewCart = ({rev}) => {
                 <div className="card-actions justify-end text-start">
                     <div className='text-xl font-bold text-orange-600'>Rating {rating}</div>
                     <button className="btn btn-primary">Edit</button>
-                    <button className="btn btn-primary">Delete</button>
+                    <button onClick={()=>handleReviewDelete(_id)} className="btn btn-primary">Delete</button>
                 </div>
             </div>
         </div>

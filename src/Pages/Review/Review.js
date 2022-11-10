@@ -11,6 +11,26 @@ const Review = () => {
             .then(data => setReview(data))
     }, [user?.email])
 
+    const handleReviewDelete=id=>{
+        const proced=window.confirm("Yor are Sure ? You want to cancel this Review : ");
+        if(proced){
+            fetch(`http://localhost:5000/review/${id}`,{
+            method:"DELETE"
+        })
+        .then(res=>res.json())
+        .then(data=>{
+              console.log(data)
+              if (data.deletedCount>0) {
+                alert("Successfully deleted one document.");
+
+                const remainingReview=review.filter(rev=>rev._id!==id);
+                setReview(remainingReview);
+              }
+            
+            })
+        }
+    
+     }
     return (
         <div>
             <h3 className='text-4xl m-8'>All Review </h3>
@@ -19,6 +39,7 @@ const Review = () => {
                 review.map(rev=><ReviewCart
                 key={rev._id}
                 rev={rev}
+                handleReviewDelete={handleReviewDelete}
                 
                 ></ReviewCart>)
             }
