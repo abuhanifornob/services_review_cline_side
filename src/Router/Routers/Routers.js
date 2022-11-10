@@ -8,6 +8,7 @@ import Home from '../../Pages/Home/Home';
 import Login from '../../Pages/Login/Login';
 import Review from '../../Pages/Review/Review';
 import SignUp from '../../Pages/SignUp/SignUp';
+import View from '../../Pages/View/View';
 import PrivetRoutes from '../PrivetRoutes/PrivetRoutes';
 
 
@@ -44,6 +45,11 @@ import PrivetRoutes from '../PrivetRoutes/PrivetRoutes';
       {
         path: '/comments/:id',
         element:<PrivetRoutes><Comments></Comments></PrivetRoutes>,
+        loader: ({params})=> fetch(`http://localhost:5000/service/${params.id}`)
+      },
+      {
+        path: '/viewreview/:id',
+        element:<PrivetRoutes><View></View></PrivetRoutes>,
         loader: ({params})=> fetch(`http://localhost:5000/service/${params.id}`)
       },
       {

@@ -64,7 +64,7 @@ const Comments = () => {
                 <input name="phone" type="text" placeholder="Your Phone" className="input input-ghost w-full  input-bordered" required />
                 <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
                 <input name="date" type="date" placeholder="Current Date" className="input input-ghost w-full  input-bordered"/>
-                <input name="rating" type="text" placeholder="Your Rating Point Out of 5" className="input input-ghost w-full  input-bordered"/>
+                <input name="rating" type="text" placeholder="Your Rating Point Out of 5" className="input input-ghost w-full  input-bordered" />
                 
             </div>
             <textarea name="message" className="textarea textarea-bordered h-52 w-full mt-5" placeholder="Your Message for Trainer " required></textarea>
