@@ -22,17 +22,13 @@ const AllCategoryCart = ({serviceCategory}) => {
                     description
                 //  {`/news/${_id}`}
             }</p>
-                    <div className='flex justify-around'>
-                        <div>
-                        <h3>Price: {price}</h3>
-                        </div>
-                        
+                    <div className='flex justify-around'>   
                     <div className="card-actions justify-end">
                     <Link to={`/comments/${_id}`}>
                         <button className="btn btn-primary">Your Comments</button>
                     </Link>
                       
-                        <div className="btn btn-primary">Check Review</div>
+                        <div className="btn btn-primary">View Review</div>
                     </div>
                     </div>
                     

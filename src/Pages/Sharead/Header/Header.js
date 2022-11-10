@@ -21,7 +21,7 @@ const Header = () => {
         {
             user?.email ?
                 <>
-                    <li className='font-semibold'><Link to='/'>Reivew</Link></li>
+                    <li className='font-semibold'><Link to='/review'>Reivew</Link></li>
                     <li className='font-semibold'>
                         <button onClick={handleLogOut} className='btn-ghost'>Sign Out</button>
                     </li>
@@ -57,7 +57,7 @@ const Header = () => {
             <div className="navbar-end">
                 <div className="w-24 rounded-full">
                     {
-                        user?.uid?<img src={user.photoURL} />:""
+                        user?.uid?<img src={user.photoURL} className="w-24 rounded-full mr-10" />:""
 
                     }
                     

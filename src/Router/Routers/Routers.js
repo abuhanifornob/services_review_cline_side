@@ -6,7 +6,9 @@ import AllService from '../../Pages/AllService/AllService';
 import Blog from '../../Pages/Blog/Blog';
 import Home from '../../Pages/Home/Home';
 import Login from '../../Pages/Login/Login';
+import Review from '../../Pages/Review/Review';
 import SignUp from '../../Pages/SignUp/SignUp';
+import PrivetRoutes from '../PrivetRoutes/PrivetRoutes';
 
 
    const router=createBrowserRouter([
@@ -20,6 +22,7 @@ import SignUp from '../../Pages/SignUp/SignUp';
           loader:()=>fetch("http://localhost:5000/services")
 
       },
+     
       {
         path:"/login",
         element:<Login></Login>
@@ -40,9 +43,13 @@ import SignUp from '../../Pages/SignUp/SignUp';
       },
       {
         path: '/comments/:id',
-        element:<Comments></Comments>,
+        element:<PrivetRoutes><Comments></Comments></PrivetRoutes>,
         loader: ({params})=> fetch(`http://localhost:5000/service/${params.id}`)
       },
+      {
+        path:"/review",
+        element:<PrivetRoutes><Review></Review></PrivetRoutes>
+    }
       ]
       
     }

@@ -20,9 +20,12 @@ const Services = ({service}) => {
                     description
                 //  {`/news/${_id}`}
             }</p>
-                    <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Fashion</div>
-                        <div className="badge badge-outline">Products</div>
+                        <div className="card-actions justify-end">
+                    <Link to={`/comments/${_id}`}>
+                        <button className="btn btn-primary">Your Comments</button>
+                    </Link>
+                      
+                        <div className="btn btn-primary">View Review</div>
                     </div>
                 </div>
             </div>
