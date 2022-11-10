@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'; 
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../../Asserts/logo.jpg"
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
 
     const handleLogOut = () => {
         logOut()
@@ -14,24 +15,26 @@ const Header = () => {
 
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><Link to='/serviceall'>Services</Link></li>
         <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
+
         {
             user?.email ?
                 <>
                     <li className='font-semibold'><Link to='/'>Reivew</Link></li>
                     <li className='font-semibold'>
-                        <button onClick={ handleLogOut } className='btn-ghost'>Sign Out</button>
+                        <button onClick={handleLogOut} className='btn-ghost'>Sign Out</button>
                     </li>
                 </>
                 :
                 <li className='font-semibold'><Link to='/login'>Login</Link></li>
         }
-          
+
     </>
 
     return (
         <div className="navbar h-20 mb-12 pt-12 bg-base-100">
-     
+
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -52,11 +55,17 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-outline btn-warning">Appointment</button>
+                <div className="w-24 rounded-full">
+                    {
+                        user?.uid?<img src={user.photoURL} />:""
+
+                    }
+                    
+                </div>
             </div>
         </div>
     );
-   
+
 };
 
 export default Header;

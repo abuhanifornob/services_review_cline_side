@@ -1,18 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Services = ({service}) => {
-    const { title, img, price, description } = service;
+    const { title, img, price, description ,_id} = service;
     return (
         <div >
             <div className="card w-96 bg-base-100 shadow-2xl">
                 <figure><img src={img} alt="Shoes" /></figure>
-                <img src='https://ibb.co/DDJLcQc'></img>
+                
                 <div className="card-body">
                     <h2 className="card-title">
                         {title}
-                        <div className="badge badge-secondary">NEW</div>
+                    
                     </h2>
-                    <p>{description}</p>
+                    <p>{
+                description.length >100 ?
+                    <>{description.slice(0, 100) + '...'} <Link to={`/cours/${_id}`}>See Details</Link> </>
+                    :
+                    description
+                //  {`/news/${_id}`}
+            }</p>
                     <div className="card-actions justify-end">
                         <div className="badge badge-outline">Fashion</div>
                         <div className="badge badge-outline">Products</div>

@@ -1,27 +1,38 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AllCategoryCart = ({serviceCategory}) => {
     const{title,img,description,_id,price}=serviceCategory;
     return (
         <div>
-            <div >
-            <div className="card w-96 bg-base-100 shadow-2xl">
+            <div className='' >
+            <div className="card w-96 bg-base-100 shadow-2xl p-3 ">
                 <figure><img src={img} alt="Shoes" /></figure>
          
                 <div className="card-body">
-                    <h2 className="card-title">
+                    <h2 className="card-title text-center">
                         {title}
-                        <div className="badge badge-secondary">NEW</div>
+                     
                     </h2>
-                    <p>{description}</p>
+                 
+                    <p>{
+                description.length >100 ?
+                    <>{description.slice(0, 100) + '...'} <Link to={`/cours/${_id}`}>See Details</Link> </>
+                    :
+                    description
+                //  {`/news/${_id}`}
+            }</p>
                     <div className='flex justify-around'>
                         <div>
                         <h3>Price: {price}</h3>
                         </div>
                         
                     <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Fashion</div>
-                        <div className="badge badge-outline">Products</div>
+                    <Link to={`/comments/${_id}`}>
+                        <button className="btn btn-primary">Your Comments</button>
+                    </Link>
+                      
+                        <div className="btn btn-primary">Check Review</div>
                     </div>
                     </div>
                     

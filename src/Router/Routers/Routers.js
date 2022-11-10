@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import Comments from '../../Comments/Comments';
 import Main from '../../Layout/Main';
 import AllService from '../../Pages/AllService/AllService';
 import Blog from '../../Pages/Blog/Blog';
@@ -36,7 +37,12 @@ import SignUp from '../../Pages/SignUp/SignUp';
         element:<AllService></AllService>,
         loader:()=>fetch("http://localhost:5000/serviceall")
 
-      }
+      },
+      {
+        path: '/comments/:id',
+        element:<Comments></Comments>,
+        loader: ({params})=> fetch(`http://localhost:5000/service/${params.id}`)
+      },
       ]
       
     }
