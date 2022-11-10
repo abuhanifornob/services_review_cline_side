@@ -28,7 +28,9 @@ const AllCategoryCart = ({serviceCategory}) => {
                         <button className="btn btn-primary">Your Comments</button>
                     </Link>
                       
-                        <div className="btn btn-primary">View Review</div>
+                    <Link to={`/viewreview/${_id}`}>
+                      <div className="btn btn-primary">View Review</div>
+                      </Link>
                     </div>
                     </div>
                     

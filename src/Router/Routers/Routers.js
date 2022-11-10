@@ -50,7 +50,7 @@ import PrivetRoutes from '../PrivetRoutes/PrivetRoutes';
       {
         path: '/viewreview/:id',
         element:<PrivetRoutes><View></View></PrivetRoutes>,
-        loader: ({params})=> fetch(`http://localhost:5000/service/${params.id}`)
+        loader: ({params})=> fetch(`http://localhost:5000/veiwId?trainerReviewId=${params.id}`)
       },
       {
         path:"/review",
