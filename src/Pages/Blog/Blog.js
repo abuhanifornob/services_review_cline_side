@@ -2,8 +2,9 @@ import React from 'react';
 
 const Blog = () => {
   return (
-    <>
-      <div tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
+    <div className='m-8 gap-4'>
+      <h3 className='text-3xl font-bolder text-orange-600 m-5 shadow-2xl'>This is My Blog </h3>
+      <div tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box ">
         <div className="collapse-title text-xl font-medium">
 
           Difference between SQL and NoSQL
@@ -59,7 +60,7 @@ const Blog = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
 
   );
 };
