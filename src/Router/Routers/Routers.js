@@ -3,7 +3,9 @@ import { createBrowserRouter } from 'react-router-dom';
 import Comments from '../../Comments/Comments';
 import Main from '../../Layout/Main';
 import AllService from '../../Pages/AllService/AllService';
+import ServicesDetails from '../../Pages/AllService/ServicesDetails';
 import Blog from '../../Pages/Blog/Blog';
+import FourOfFour from '../../Pages/FourOfFour/FourOfFour';
 import Home from '../../Pages/Home/Home';
 import Login from '../../Pages/Login/Login';
 import Review from '../../Pages/Review/Review';
@@ -55,9 +57,19 @@ import PrivetRoutes from '../PrivetRoutes/PrivetRoutes';
       {
         path:"/review",
         element:<PrivetRoutes><Review></Review></PrivetRoutes>
-    }
+    },
+    {
+      path: '/servicesDetails/:id',
+      element:<ServicesDetails></ServicesDetails>,
+      loader: ({params})=> fetch(`http://localhost:5000/service/${params.id}`)
+    },
       ]
       
+    },
+    
+    {
+      path:"/*",
+      element:<FourOfFour></FourOfFour>
     }
   
     

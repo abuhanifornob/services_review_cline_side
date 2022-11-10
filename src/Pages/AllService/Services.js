@@ -15,7 +15,7 @@ const Services = ({service}) => {
                     </h2>
                     <p>{
                 description.length >100 ?
-                    <>{description.slice(0, 100) + '...'} <Link to={`/cours/${_id}`}>See Details</Link> </>
+                    <>{description.slice(0, 100) + '...'} <Link to={`/servicesDetails/${_id}`}>See Details</Link> </>
                     :
                     description
                 //  {`/news/${_id}`}
